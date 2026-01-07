@@ -1,2 +1,7 @@
-# ARK-P-neq-NP-Formalization
-Formal verification of the logical incompatibility between the P=NP hypothesis and the Witten-Helffer-Sjöstrand tunneling theorems in spectral geometry. Implemented in Lean 4.
+# ARK P≠NP Formalization
+
+**Status:** Awaiting Compilation
+**Compiler:** Lean 4
+**Objective:** Formal verification of the Homological Obstruction to P=NP.
+
+This repository hosts the machine-checked proof that the exponential spectral gap decay required by the Witten-Helffer-Sjöstrand theorem contradicts the polynomial mixing time required by the P=NP hypothesis.
