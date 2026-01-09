@@ -3,7 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Calculus.FDeriv.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.LinearAlgebra.FiniteDimensional.Defs
-import Mathlib.Topology.Path
 
 namespace ARK.Physics
 noncomputable section
@@ -30,18 +29,6 @@ def WittenLaplacian (f : PotentialFunction E) (x : E) : E →L[ℝ] E :=
   let term_potential := (‖gradient f x‖ ^ 2) • (ContinuousLinearMap.id ℝ E)
   let term_hessian := hessian f x
   term_laplacian + term_potential + term_hessian
-
-/-- Topological Barrier Condition: Paths must go UP to cross between x and y -/
-def SeparatedByBarrier (f : PotentialFunction E) (x y : E) : Prop :=
-  ∀ (γ : Path x y), ∃ t, f.val (γ t) > max (f.val x) (f.val y)
-
-/-- Local Minimality: The valley floor -/
-def IsLocalMin (f : PotentialFunction E) (x : E) : Prop :=
-  ∃ ε > 0, ∀ y, dist y x < ε → f.val x ≤ f.val y
-
-/-- Frustration: The existence of competing metastable states (Multiple Minima) -/
-def IsFrustrated (f : PotentialFunction E) : Prop :=
-  ∃ (x y : E), x ≠ y ∧ IsLocalMin f x ∧ IsLocalMin f y
 
 end
 end ARK.Physics
