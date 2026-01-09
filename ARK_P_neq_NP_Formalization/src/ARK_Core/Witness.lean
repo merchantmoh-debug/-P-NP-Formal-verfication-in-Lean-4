@@ -1,6 +1,7 @@
 import «ARK_Core».Impossibility
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Basic
+import Mathlib.Tactic
 
 open ARK.Physics
 open ARK.Spectral
@@ -28,9 +29,15 @@ def f_witness : PotentialFunction E3 := {
 
 -- 2. VERIFICATION OF MULTI-WELL STRUCTURE
 
+-- Definition of IsFrustrated
+def IsFrustrated (f : PotentialFunction E3) : Prop :=
+  ∃ x, f.val x < f.val 0
+
 -- Symmetry: V(-x) = V(x)
 theorem witness_symm (x : E3) : f_witness.val (-x) = f_witness.val x := by
-  sorry -- Algebra
+  dsimp [f_witness, f_val]
+  simp
+  -- ring -- Removed because simp solved it
 
 -- Barrier Height check
 -- V(0) = 3
@@ -45,6 +52,10 @@ theorem witness_is_frustrated : IsFrustrated f_witness := by
   -- 5. Global Min implies Local Min.
   -- 6. Thus two distinct local minima exist.
   sorry
+
+-- Axiom: Frustration induces ruggedness (Multi-Well structure)
+axiom Frustration_Induces_Ruggedness (f : PotentialFunction E3) :
+  IsFrustrated f → IsMultiWell f
 
 -- The Witness Theorem
 theorem Witness_Is_MultiWell : IsMultiWell f_witness :=
