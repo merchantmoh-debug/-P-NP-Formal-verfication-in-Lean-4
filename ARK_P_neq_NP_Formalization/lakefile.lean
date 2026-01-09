@@ -20,6 +20,11 @@ lean_lib «Witness» {
   roots := #[`Witness]
 }
 
+lean_lib «WitnessN» {
+  srcDir := "src"
+  roots := #[`WitnessN]
+}
+
 lean_exe verify_ark {
   root := `RunVerification
   srcDir := "test"
