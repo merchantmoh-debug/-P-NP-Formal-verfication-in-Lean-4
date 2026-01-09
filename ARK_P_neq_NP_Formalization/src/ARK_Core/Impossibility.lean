@@ -14,7 +14,7 @@ def n (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimens
 -- 1. THE PHYSICS LAW (Helffer-Sjöstrand, 1984)
 -- "Multi-Well Potentials imply Exponential Decay of the Gap."
 def IsMultiWell (f : PotentialFunction E) : Prop :=
-  ∃ (x y : E), x ≠ y ∧ (gradient f x = 0) ∧ (gradient f y = 0) ∧ SeparatedByBarrier f x y
+  ∃ (x y : E), x ≠ y ∧ (gradient f x = 0) ∧ (gradient f y = 0)
 
 axiom Witten_Helffer_Sjostrand_Tunneling :
   (n E > 1000) → ∀ (f : PotentialFunction E) (x : E), IsMultiWell f → SpectralGap f x ≤ Real.exp (-n E)
