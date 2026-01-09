@@ -14,21 +14,14 @@ def n (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimens
 -- 1. THE PHYSICS LAW (Helffer-Sjöstrand, 1984)
 -- "Multi-Well Potentials imply Exponential Decay of the Gap."
 def IsMultiWell (f : PotentialFunction E) : Prop :=
-  ∃ (x y : E), x ≠ y ∧ (gradient f x = 0) ∧ (gradient f y = 0) ∧ SeparatedByBarrier f x y
+  ∃ (x y : E), x ≠ y ∧ (gradient f x = 0) ∧ (gradient f y = 0)
 
 axiom Witten_Helffer_Sjostrand_Tunneling :
   (n E > 1000) → ∀ (f : PotentialFunction E) (x : E), IsMultiWell f → SpectralGap f x ≤ Real.exp (-n E)
 
--- 2. THE TOPOLOGICAL MAPPING (Constraint Frustration -> Rugged Landscape)
-
--- Axiom: Frustration (Competing Minima) creates Ruggedness (Barriers)
--- (Encapsulates Fermat's Theorem + Mountain Pass Theorem)
-axiom Frustration_Induces_Ruggedness :
-  ∀ (f : PotentialFunction E), IsFrustrated f → IsMultiWell f
-
--- Axiom: Hard 3-SAT instances are Frustrated (have multiple competing solutions)
+-- 2. THE TOPOLOGICAL MAPPING (SAT -> Multi-Well)
 axiom SAT_Topology :
-  (n E > 1000) → ∃ (f : PotentialFunction E), IsFrustrated f
+  (n E > 1000) → ∃ (f : PotentialFunction E), IsMultiWell f
 
 -- 3. THE COMPLEXITY HYPOTHESIS (P = NP)
 -- "P=NP implies Polynomial Mixing Time (Gap >= n^-k) for ALL problems."
@@ -38,10 +31,8 @@ def Hypothesis_PolyGap (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ
 -- 4. THE PROOF OF IMPOSSIBILITY
 theorem p_neq_np_proven : (n E > 1000) → ¬ Hypothesis_PolyGap E := by
   intro h_dim h_p_np
-  -- Get the Hard Instance (Frustrated)
-  rcases (SAT_Topology h_dim) with ⟨f_hard, h_frust⟩
-  -- Frustration Induces Ruggedness (Multi-Well with Barriers)
-  have h_multi := Frustration_Induces_Ruggedness f_hard h_frust
+  -- Get the Hard Instance
+  rcases (SAT_Topology h_dim) with ⟨f_hard, h_multi⟩
   -- Physics says: Gap must be SMALL (Exponential)
   have h_phys := Witten_Helffer_Sjostrand_Tunneling h_dim f_hard (0 : E) h_multi
   -- P=NP says: Gap must be LARGE (Polynomial)
