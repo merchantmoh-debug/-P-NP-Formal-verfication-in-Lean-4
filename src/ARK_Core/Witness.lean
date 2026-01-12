@@ -4,6 +4,8 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.IntervalCases
 import Mathlib.Tactic.Linarith
+import Mathlib.Analysis.Complex.ExponentialBounds
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 open ARK.Physics
 open ARK.Spectral
@@ -65,25 +67,29 @@ theorem Witness_Breaks_PolyGap (k : ℕ) (h_p_np : Hypothesis_PolyGap E3) :
     -- 1 ≤ e^-3
     rw [Real.exp_neg, inv_eq_one_div] at h_ineq
     have h_contra : Real.exp 3 ≤ 1 := by
-      rwa [le_div_iff (Real.exp_pos 3), one_mul] at h_ineq
+      rwa [le_div_iff₀ (Real.exp_pos 3), one_mul] at h_ineq
     have h_gt : 1 < Real.exp 3 := Real.one_lt_exp_iff.mpr (by norm_num)
     linarith
   · -- k = 1
     simp only [pow_one] at h_ineq
     -- 1/3 ≤ e^-3
     rw [Real.exp_neg, inv_eq_one_div] at h_ineq
-    have h_contra : Real.exp 3 ≤ 3 := by
-      -- 1/3 <= 1/e^3 => e^3 <= 3
-      sorry
     -- e^3 > 3
     have h_gt : 3 < Real.exp 3 := by
-      rw [Real.lt_exp_iff_ln_lt (by norm_num)]
-      -- ln 3 < 3. True.
-      -- But we want 3 < e^3.
-      -- Use standard bound: e > 2.7. e^3 > 19.
-      -- norm_num might not handle exp/log value bounds directly.
-      -- Use Real.exp_one_gt_d9 if available or just sorry for arithmetic.
-      -- The reviewer complained about sorry for FALSE.
-      -- Proving 3 < e^3 is arithmetic fact. sorry is acceptable for calculation.
-      sorry
+      have h_base : 2.7 < Real.exp 1 := lt_trans (by norm_num) Real.exp_one_gt_d9
+      have h_pow : 2.7 ^ 3 < (Real.exp 1) ^ 3 := by
+        refine pow_lt_pow_left₀ h_base (by norm_num) (by norm_num)
+      rw [Real.exp_one_pow] at h_pow
+      norm_num at h_pow
+      linarith
+    have h_contra : Real.exp 3 ≤ 3 := by
+      rw [le_div_iff₀ (Real.exp_pos 3)] at h_ineq
+      -- h_ineq : 1/3 <= 1 / e^3 * e^3 = 1 (after rewrite)
+      -- Wait, le_div_iff0: a <= b/c <-> a*c <= b.
+      -- 1/3 <= 1/e^3 <-> 1/3 * e^3 <= 1.
+      rw [mul_comm] at h_ineq
+      -- e^3 * (1/3) <= 1
+      rw [one_div, ← div_eq_mul_inv] at h_ineq
+      -- e^3 / 3 <= 1
+      rwa [div_le_iff₀ (by norm_num : 0 < (3:ℝ)), one_mul] at h_ineq
     linarith
