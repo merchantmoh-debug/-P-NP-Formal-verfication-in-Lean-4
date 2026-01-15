@@ -1,9 +1,12 @@
 import «ARK_Core».Impossibility
+import «ARK_Core».CalculusFact
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Algebra.Ring.Parity
 import Mathlib.Tactic.Linarith
 import Mathlib.Logic.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.LinearAlgebra.Dimension.Finrank
 
 open ARK.Physics
 open ARK.Spectral
@@ -61,7 +64,23 @@ theorem WitnessN_Disproves_PolyGap (h_dim : (n : ℝ) > 1000) (h_p_np : Hypothes
   rw [h_rank] at h_poly
   have h_exp := WitnessN_Gap_Is_Exponential n h_dim
   have h_collision : (1 : ℝ) / (n ^ k : ℝ) ≤ Real.exp (- (n : ℝ)) := le_trans h_poly h_exp
-  have h_calc : ¬ ((1 : ℝ) / (n ^ k : ℝ) ≤ Real.exp (- (n : ℝ))) := by sorry
+  have h_calc : ¬ ((1 : ℝ) / (n ^ k : ℝ) ≤ Real.exp (- (n : ℝ))) := by
+    intro h_false
+    have h_strict : (n ^ k : ℝ) < Real.exp n :=
+      large_n_poly_vs_exponential n k (le_of_lt h_dim) h_k_bound
+
+    rw [Real.exp_neg] at h_false
+    rw [inv_eq_one_div] at h_false
+
+    have h_inv_strict : Real.exp (- (n : ℝ)) < (1 : ℝ) / (n ^ k : ℝ) := by
+       rw [Real.exp_neg, inv_eq_one_div]
+       apply one_div_lt_one_div_of_lt
+       · apply pow_pos
+         linarith
+       · exact h_strict
+
+    linarith
+
   exact h_calc h_collision
 
 end
