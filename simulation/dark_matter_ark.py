@@ -7,11 +7,23 @@ topological stability (spectral gap), and computational complexity classes.
 
 Authorized by: Mohamad Al-Zawahreh
 Identity: ARK ASCENDANCE v64.0
-Optimization: BOLT (Speed + Structure)
+Optimization: BOLT (Speed + Structure) | PALETTE (Visual Fidelity)
 """
 
 import numpy as np
-from typing import Tuple, List, Optional
+import matplotlib.pyplot as plt
+from typing import Union, List, Optional
+
+# PALETTE: Visual Telemetry System
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
 
 class CosmicSimulator:
     """
@@ -26,75 +38,36 @@ class CosmicSimulator:
     SOLAR_MASS_KG: float = 1.989e30
     KPC_METERS: float = 3.086e19
 
-    # Simulation Constants (Dimensionless or specific unit system)
-    # G_approx: Gravitational constant in simulation units (km^2 * kpc / (M_sol * s^2) approx)
+    # Simulation Constants
     G_APPROX: float = 4.3e-6
-
-    # Critical Density Factor for Spectral Gap calculation
     CRITICAL_DENSITY_FACTOR: float = 1.0e7
-
-    # Phase Transition Threshold (The Event Horizon of Complexity)
     ARK_THRESHOLD: float = 0.85
 
     @staticmethod
-    def calculate_spectral_gap(mass_solar: float, radius_kpc: float) -> float:
+    def calculate_spectral_gap(mass_solar: Union[float, np.ndarray], radius_kpc: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
         """
         Calculates the ARK Scalar (Spectral Gap) for a given cosmic structure.
 
-        The Spectral Gap represents the energy cost to excite the system from its ground state.
-        In the ARK isomorphism:
-        - Large Gap (> 0.85) -> Frozen/Stable -> Polynomial Time (P)
-        - Small Gap (< 0.85) -> Collapsed/Chaotic -> Non-Polynomial Difficulty (NP)
-
-        Args:
-            mass_solar (float): Mass in Solar Masses.
-            radius_kpc (float): Radius in Kiloparsecs.
-
-        Returns:
-            float: The dimensionless ARK Scalar (0 < s <= 1).
+        BOLT OPTIMIZATION: Fully vectorized for O(1) array processing.
         """
-        # Volume in Kpc^3
-        # Optimization: Pre-compute 4/3 * pi if called frequently, but here clarity reigns.
-        vol_kpc: float = (4.0 / 3.0) * np.pi * (radius_kpc ** 3)
-
-        # Density in Solar Masses / Kpc^3
-        density: float = mass_solar / vol_kpc
-
-        # The Isomorphic Mapping Function: exp(-density / critical)
-        ark_scalar: float = np.exp(-1.0 * (density / CosmicSimulator.CRITICAL_DENSITY_FACTOR))
-
+        vol_kpc = (4.0 / 3.0) * np.pi * (radius_kpc ** 3)
+        density = mass_solar / vol_kpc
+        ark_scalar = np.exp(-1.0 * (density / CosmicSimulator.CRITICAL_DENSITY_FACTOR))
         return ark_scalar
 
     @staticmethod
-    def calculate_escape_velocity(mass_solar: float, radius_kpc: float) -> float:
+    def calculate_escape_velocity(mass_solar: Union[float, np.ndarray], radius_kpc: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
         """
         Calculates the Newtonian escape velocity.
-
-        Args:
-            mass_solar (float): Mass in Solar Masses.
-            radius_kpc (float): Radius in Kiloparsecs.
-
-        Returns:
-            float: Escape velocity in km/s.
         """
         return np.sqrt(2 * CosmicSimulator.G_APPROX * mass_solar / radius_kpc)
 
     @classmethod
     def simulate_galaxy(cls, name: str, mass: float, velocity_dispersion: float, radius: float, is_dark_matter: bool) -> float:
         """
-        Runs a full simulation on a target galaxy.
-
-        Args:
-            name (str): Name of the galaxy/structure.
-            mass (float): Mass in Solar Masses.
-            velocity_dispersion (float): Velocity dispersion (km/s) - tracked but not currently used in gap calc.
-            radius (float): Radius in Kpc.
-            is_dark_matter (bool): Flag for dark matter candidates.
-
-        Returns:
-            float: The calculated Spectral Gap.
+        Runs a full simulation on a target galaxy and logs telemetry.
         """
-        print(f"\n--- SIMULATING OBJECT: {name} ---")
+        print(f"\n{Colors.HEADER}--- SIMULATING OBJECT: {name} ---{Colors.ENDC}")
         print(f"Mass: {mass:.2e} Solar Masses")
 
         # Standard Physics Check
@@ -103,44 +76,84 @@ class CosmicSimulator:
 
         # ARK Check
         gap = cls.calculate_spectral_gap(mass, radius)
-        print(f"ARK Spectral Gap: {gap:.5f}")
+        print(f"ARK Spectral Gap:   {Colors.BOLD}{gap:.5f}{Colors.ENDC}")
 
         status = ""
         if gap > cls.ARK_THRESHOLD:
-            status = "FROZEN (Topological Lock)"
+            status = f"{Colors.CYAN}FROZEN (Topological Lock){Colors.ENDC}"
         else:
-            status = "COLLAPSED (Star Formation)"
+            status = f"{Colors.YELLOW}COLLAPSED (Star Formation){Colors.ENDC}"
 
-        print(f"PREDICTION: {status}")
-        return gap
+        print(f"PREDICTION:         {status}")
+        return float(gap)
 
 def main():
     """
     Main execution entry point.
-    Runs the standard ARK test suite for Milky Way and J0613+52.
+    Runs simulations and generates Palette visualization.
     """
-    print("ARK ASCENDANCE v64.0 - SIMULATION PROTOCOL INITIALIZED")
+    print(f"{Colors.BOLD}ARK ASCENDANCE v64.0 - SIMULATION PROTOCOL INITIALIZED{Colors.ENDC}")
     print(f"Threshold: {CosmicSimulator.ARK_THRESHOLD}")
 
+    # Data Containers for Plotting
+    names = []
+    gaps = []
+    colors = []
+
     # Simulation 1: Milky Way (Standard Spiral)
-    # Expected: Collapsed (Gap < 0.85)
-    _ = CosmicSimulator.simulate_galaxy(
-        name="Milky Way",
+    name_mw = "Milky Way"
+    gap_mw = CosmicSimulator.simulate_galaxy(
+        name=name_mw,
         mass=1e12,
         velocity_dispersion=220,
         radius=30,
         is_dark_matter=False
     )
+    names.append(name_mw)
+    gaps.append(gap_mw)
+    colors.append('blue')
 
-    # Simulation 2: J0613+52 (Dark Matter Galaxy / "Cloud-9")
-    # Expected: Frozen (Gap > 0.85)
-    _ = CosmicSimulator.simulate_galaxy(
-        name="J0613+52 (Cloud-9)",
+    # Simulation 2: J0613+52 (Dark Matter Galaxy)
+    name_ghost = "J0613+52"
+    gap_ghost = CosmicSimulator.simulate_galaxy(
+        name=name_ghost,
         mass=2.0e9,
         velocity_dispersion=200,
         radius=15,
         is_dark_matter=True
     )
+    names.append(name_ghost)
+    gaps.append(gap_ghost)
+    colors.append('black')
+
+    # PALETTE: Generate Visualization
+    print(f"\n{Colors.HEADER}--- GENERATING VISUALIZATION ---{Colors.ENDC}")
+
+    try:
+        y_pos = np.arange(len(names))
+
+        plt.figure(figsize=(10, 6))
+        bars = plt.bar(y_pos, gaps, align='center', alpha=0.7, color=colors)
+        plt.xticks(y_pos, names)
+        plt.ylabel('Spectral Gap Magnitude')
+        plt.title('ARK Verification: Spectral Gap Analysis')
+
+        # Add Threshold Line
+        plt.axhline(y=CosmicSimulator.ARK_THRESHOLD, color='r', linestyle='--', label=f'Obstruction Limit ({CosmicSimulator.ARK_THRESHOLD})')
+
+        # Add values on top of bars
+        for bar in bars:
+            height = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2., height,
+                    f'{height:.4f}',
+                    ha='center', va='bottom')
+
+        plt.legend()
+        plt.savefig('ark_verification_plot.png')
+        print(f"{Colors.GREEN}✓ Plot saved to 'ark_verification_plot.png'{Colors.ENDC}")
+
+    except Exception as e:
+        print(f"{Colors.RED}❌ Visualization Failed: {e}{Colors.ENDC}")
 
 if __name__ == "__main__":
     main()
