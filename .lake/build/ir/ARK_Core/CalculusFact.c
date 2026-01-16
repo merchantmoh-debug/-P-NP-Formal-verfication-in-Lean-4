@@ -1,6 +1,6 @@
 // Lean compiler output
 // Module: ARK_Core.CalculusFact
-// Imports: public import Init public import Mathlib.Analysis.SpecialFunctions.Exp public import Mathlib.Analysis.SpecialFunctions.Pow.Real public import Mathlib.LinearAlgebra.Dimension.Finrank
+// Imports: public import Init public import Mathlib.Analysis.SpecialFunctions.Exp public import Mathlib.Analysis.SpecialFunctions.Pow.Real public import Mathlib.Analysis.SpecialFunctions.Log.Basic public import Mathlib.Analysis.SpecialFunctions.Log.Deriv public import Mathlib.Analysis.Calculus.Deriv.Basic public import Mathlib.Analysis.Calculus.MeanValue public import Mathlib.Analysis.Calculus.Deriv.MeanValue public import Mathlib.LinearAlgebra.Dimension.Finrank public import Mathlib.Analysis.Complex.ExponentialBounds public import Mathlib.Tactic.NormNum
 #include <lean/lean.h>
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunused-parameter"
@@ -16,7 +16,14 @@ extern "C" {
 lean_object* initialize_Init(uint8_t builtin);
 lean_object* initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Exp(uint8_t builtin);
 lean_object* initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Pow_Real(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Log_Basic(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Log_Deriv(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Analysis_Calculus_Deriv_Basic(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Analysis_Calculus_MeanValue(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Analysis_Calculus_Deriv_MeanValue(uint8_t builtin);
 lean_object* initialize_mathlib_Mathlib_LinearAlgebra_Dimension_Finrank(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Analysis_Complex_ExponentialBounds(uint8_t builtin);
+lean_object* initialize_mathlib_Mathlib_Tactic_NormNum(uint8_t builtin);
 static bool _G_initialized = false;
 LEAN_EXPORT lean_object* initialize_ARK_x2dP_x2dneq_x2dNP_ARK__Core_CalculusFact(uint8_t builtin) {
 lean_object * res;
@@ -31,7 +38,28 @@ lean_dec_ref(res);
 res = initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Pow_Real(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Log_Basic(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Analysis_SpecialFunctions_Log_Deriv(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Analysis_Calculus_Deriv_Basic(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Analysis_Calculus_MeanValue(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Analysis_Calculus_Deriv_MeanValue(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
 res = initialize_mathlib_Mathlib_LinearAlgebra_Dimension_Finrank(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Analysis_Complex_ExponentialBounds(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_mathlib_Mathlib_Tactic_NormNum(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 return lean_io_result_mk_ok(lean_box(0));

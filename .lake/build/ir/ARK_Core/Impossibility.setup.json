@@ -404,6 +404,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Opens.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Opens.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Opens.olean.private"],
+  "Mathlib.Topology.Sets.Closeds":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Closeds.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Closeds.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Closeds.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sets/Closeds.olean.private"],
   "Mathlib.Topology.Sequences":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sequences.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Sequences.ir",
@@ -444,6 +449,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Piecewise.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Piecewise.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Piecewise.olean.private"],
+  "Mathlib.Topology.Perfect":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Perfect.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Perfect.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Perfect.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Perfect.olean.private"],
   "Mathlib.Topology.Path":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Path.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Path.ir",
@@ -454,6 +464,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/T5.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/T5.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/T5.olean.private"],
+  "Mathlib.Topology.Order.Rolle":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean.private"],
   "Mathlib.Topology.Order.Real":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/Real.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/Real.ir",
@@ -519,6 +534,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/IntermediateValue.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/IntermediateValue.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/IntermediateValue.olean.private"],
+  "Mathlib.Topology.Order.ExtendFrom":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean.private"],
   "Mathlib.Topology.Order.DenselyOrdered":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/DenselyOrdered.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Order/DenselyOrdered.ir",
@@ -709,6 +729,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Cauchy.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Cauchy.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Cauchy.olean.private"],
+  "Mathlib.Topology.MetricSpace.CauSeqFilter":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/CauSeqFilter.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/CauSeqFilter.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/CauSeqFilter.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/CauSeqFilter.olean.private"],
   "Mathlib.Topology.MetricSpace.Bounded":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Bounded.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Bounded.ir",
@@ -749,6 +774,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyFinite.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyFinite.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyFinite.olean.private"],
+  "Mathlib.Topology.LocallyConstant.Basic":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyConstant/Basic.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyConstant/Basic.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyConstant/Basic.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/LocallyConstant/Basic.olean.private"],
   "Mathlib.Topology.Irreducible":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Irreducible.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Irreducible.ir",
@@ -849,6 +879,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/GDelta/Basic.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/GDelta/Basic.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/GDelta/Basic.olean.private"],
+  "Mathlib.Topology.ExtendFrom":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean.private"],
   "Mathlib.Topology.EMetricSpace.Pi":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/EMetricSpace/Pi.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/EMetricSpace/Pi.ir",
@@ -1189,6 +1224,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/Simple.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/Simple.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/Simple.olean.private"],
+  "Mathlib.Topology.Algebra.Module.PerfectSpace":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/PerfectSpace.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/PerfectSpace.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/PerfectSpace.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/PerfectSpace.olean.private"],
   "Mathlib.Topology.Algebra.Module.PerfectPairing":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/PerfectPairing.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/Algebra/Module/PerfectPairing.ir",
@@ -4839,6 +4879,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Alternating/Basic.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Alternating/Basic.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Alternating/Basic.olean.private"],
+  "Mathlib.LinearAlgebra.AffineSpace.Slope":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/AffineSpace/Slope.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/AffineSpace/Slope.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/AffineSpace/Slope.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/AffineSpace/Slope.olean.private"],
   "Mathlib.LinearAlgebra.AffineSpace.Restrict":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/AffineSpace/Restrict.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/AffineSpace/Restrict.ir",
@@ -7384,11 +7429,26 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Pow/Complex.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Pow/Complex.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Pow/Complex.olean.private"],
+  "Mathlib.Analysis.SpecialFunctions.Log.Deriv":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean.private"],
   "Mathlib.Analysis.SpecialFunctions.Log.Basic":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Basic.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Basic.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Basic.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Basic.olean.private"],
+  "Mathlib.Analysis.SpecialFunctions.Exponential":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Exponential.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Exponential.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Exponential.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Exponential.olean.private"],
+  "Mathlib.Analysis.SpecialFunctions.ExpDeriv":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean.private"],
   "Mathlib.Analysis.SpecialFunctions.Exp":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Exp.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Exp.ir",
@@ -7689,6 +7749,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Basic.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Basic.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Basic.olean.private"],
+  "Mathlib.Analysis.Normed.Algebra.Exponential":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Algebra/Exponential.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Algebra/Exponential.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Algebra/Exponential.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Algebra/Exponential.olean.private"],
   "Mathlib.Analysis.Normed.Affine.Isometry":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Affine/Isometry.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Normed/Affine/Isometry.ir",
@@ -7894,6 +7959,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Trigonometric.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Trigonometric.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Trigonometric.olean.private"],
+  "Mathlib.Analysis.Complex.RealDeriv":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean.private"],
   "Mathlib.Analysis.Complex.Order":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Order.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Order.ir",
@@ -7904,6 +7974,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Norm.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Norm.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Norm.olean.private"],
+  "Mathlib.Analysis.Complex.ExponentialBounds":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/ExponentialBounds.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/ExponentialBounds.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/ExponentialBounds.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/ExponentialBounds.olean.private"],
   "Mathlib.Analysis.Complex.Exponential":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Exponential.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Complex/Exponential.ir",
@@ -7939,11 +8014,41 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/TangentCone/Basic.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/TangentCone/Basic.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/TangentCone/Basic.olean.private"],
+  "Mathlib.Analysis.Calculus.MeanValue":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean.private"],
+  "Mathlib.Analysis.Calculus.LogDeriv":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean.private"],
+  "Mathlib.Analysis.Calculus.LocalExtr.Rolle":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean.private"],
+  "Mathlib.Analysis.Calculus.LocalExtr.Basic":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean.private"],
   "Mathlib.Analysis.Calculus.LagrangeMultipliers":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LagrangeMultipliers.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LagrangeMultipliers.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LagrangeMultipliers.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LagrangeMultipliers.olean.private"],
+  "Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean.private"],
+  "Mathlib.Analysis.Calculus.IteratedDeriv.Defs":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean.private"],
   "Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.ir",
@@ -8044,16 +8149,56 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Add.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Add.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Add.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.ZPow":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/ZPow.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/ZPow.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/ZPow.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/ZPow.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.Slope":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Slope.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Slope.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Slope.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Slope.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.Shift":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Shift.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Shift.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Shift.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Shift.olean.private"],
   "Mathlib.Analysis.Calculus.Deriv.Pow":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Pow.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Pow.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Pow.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Pow.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.Mul":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Mul.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Mul.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Mul.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Mul.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.MeanValue":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.Linear":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Linear.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Linear.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Linear.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Linear.olean.private"],
   "Mathlib.Analysis.Calculus.Deriv.Inverse":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.Inv":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inv.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inv.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inv.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inv.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.CompMul":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/CompMul.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/CompMul.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/CompMul.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/CompMul.olean.private"],
   "Mathlib.Analysis.Calculus.Deriv.Comp":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Comp.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Comp.ir",
@@ -8064,11 +8209,26 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Basic.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Basic.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Basic.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.AffineMap":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/AffineMap.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/AffineMap.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/AffineMap.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/AffineMap.olean.private"],
+  "Mathlib.Analysis.Calculus.Deriv.Add":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Add.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Add.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Add.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Add.olean.private"],
   "Mathlib.Analysis.Calculus.ContDiff.WithLp":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/WithLp.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/WithLp.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/WithLp.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/WithLp.olean.private"],
+  "Mathlib.Analysis.Calculus.ContDiff.RCLike":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean.private"],
   "Mathlib.Analysis.Calculus.ContDiff.Operations":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.ir",
@@ -10929,6 +11089,11 @@
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Associated.ir",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Associated.olean.server",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Associated.olean.private"],
+  "Mathlib.Algebra.Algebra.TransferInstance":
+  ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Algebra/TransferInstance.olean",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Algebra/TransferInstance.ir",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Algebra/TransferInstance.olean.server",
+   "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Algebra/TransferInstance.olean.private"],
   "Mathlib.Algebra.Algebra.Tower":
   ["/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Algebra/Tower.olean",
    "/app/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Algebra/Tower.ir",
