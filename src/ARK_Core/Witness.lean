@@ -25,10 +25,32 @@ def f_val (x : E3) : ℝ :=
   ((x 0)^2 - 1)^2 + ((x 1)^2 - 1)^2 + ((x 2)^2 - 1)^2 +
   lambda * (x 0 * x 1 + x 1 * x 2 + x 2 * x 0)
 
+-- Helper to prove smoothness of projections
+def coord_proj (i : Fin 3) : E3 →L[ℝ] ℝ :=
+  LinearMap.mkContinuous
+    { toFun := fun x => x i
+      map_add' := fun x y => rfl
+      map_smul' := fun c x => rfl }
+    1
+    (by intro x; rw [one_mul]; exact PiLp.norm_apply_le x i)
+
 -- Smoothness is guaranteed for polynomials
 def f_witness : PotentialFunction E3 := {
   val := f_val
-  smooth := by sorry
+  smooth := by
+    have h_proj : ∀ i, ContDiff ℝ 2 (fun (x : E3) => x i) :=
+      fun i => (coord_proj i).contDiff
+    unfold f_val
+    repeat
+      first
+      | apply ContDiff.add
+      | apply ContDiff.sub
+      | apply ContDiff.mul
+      | apply ContDiff.pow
+      | apply contDiff_const
+      | apply h_proj 0
+      | apply h_proj 1
+      | apply h_proj 2
 }
 
 -- 2. VERIFICATION OF MULTI-WELL STRUCTURE
