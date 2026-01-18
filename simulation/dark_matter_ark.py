@@ -13,6 +13,8 @@ Optimization: BOLT (Speed + Structure) | PALETTE (Visual Fidelity)
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Union, List, Optional
+import time
+import sys
 
 # PALETTE: Visual Telemetry System
 class Colors:
@@ -66,26 +68,33 @@ class CosmicSimulator:
     def simulate_galaxy(cls, name: str, mass: float, velocity_dispersion: float, radius: float, is_dark_matter: bool) -> float:
         """
         Runs a full simulation on a target galaxy and logs telemetry.
+        DEPRECATED: Use simulate_batch for high-performance ARK operations.
         """
-        print(f"\n{Colors.HEADER}--- SIMULATING OBJECT: {name} ---{Colors.ENDC}")
-        print(f"Mass: {mass:.2e} Solar Masses")
+        return cls.simulate_batch([name], np.array([mass]), np.array([radius]))[0]
 
-        # Standard Physics Check
-        escape_vel = cls.calculate_escape_velocity(mass, radius)
-        print(f"Newtonian Escape Vel: {escape_vel:.2f} km/s")
+    @classmethod
+    def simulate_batch(cls, names: List[str], masses: np.ndarray, radii: np.ndarray) -> np.ndarray:
+        """
+        BOLT OPTIMIZATION: Batch processing for cosmic structures.
+        Processes N galaxies in a single vectorized pass (War Speed Execution).
+        """
+        # Vectorized Physics Checks
+        escape_vels = cls.calculate_escape_velocity(masses, radii)
+        gaps = cls.calculate_spectral_gap(masses, radii)
 
-        # ARK Check
-        gap = cls.calculate_spectral_gap(mass, radius)
-        print(f"ARK Spectral Gap:   {Colors.BOLD}{gap:.5f}{Colors.ENDC}")
+        return gaps
 
-        status = ""
-        if gap > cls.ARK_THRESHOLD:
-            status = f"{Colors.CYAN}FROZEN (Topological Lock){Colors.ENDC}"
-        else:
-            status = f"{Colors.YELLOW}COLLAPSED (Star Formation){Colors.ENDC}"
-
-        print(f"PREDICTION:         {status}")
-        return float(gap)
+def print_progress_bar(iteration, total, prefix='', suffix='', decimals=1, length=50, fill='█'):
+    """
+    PALETTE ENHANCEMENT: ASCII Progress Bar
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filled_length = int(length * iteration // total)
+    bar = fill * filled_length + '-' * (length - filled_length)
+    sys.stdout.write(f'\r{Colors.CYAN}{prefix} |{bar}| {percent}% {suffix}{Colors.ENDC}')
+    sys.stdout.flush()
+    if iteration == total:
+        print()
 
 def main():
     """
@@ -95,58 +104,70 @@ def main():
     print(f"{Colors.BOLD}ARK ASCENDANCE v64.0 - SIMULATION PROTOCOL INITIALIZED{Colors.ENDC}")
     print(f"Threshold: {CosmicSimulator.ARK_THRESHOLD}")
 
-    # Data Containers for Plotting
-    names = []
-    gaps = []
-    colors = []
+    # Simulation Data Setup
+    # 1: Milky Way (Standard Spiral)
+    # 2: J0613+52 (Dark Matter Galaxy)
+    # 3+: Synthetic Data for Bolt Verification
 
-    # Simulation 1: Milky Way (Standard Spiral)
-    name_mw = "Milky Way"
-    gap_mw = CosmicSimulator.simulate_galaxy(
-        name=name_mw,
-        mass=1e12,
-        velocity_dispersion=220,
-        radius=30,
-        is_dark_matter=False
-    )
-    names.append(name_mw)
-    gaps.append(gap_mw)
-    colors.append('blue')
+    names = ["Milky Way", "J0613+52"]
+    masses = np.array([1e12, 2.0e9])
+    radii = np.array([30.0, 15.0])
 
-    # Simulation 2: J0613+52 (Dark Matter Galaxy)
-    name_ghost = "J0613+52"
-    gap_ghost = CosmicSimulator.simulate_galaxy(
-        name=name_ghost,
-        mass=2.0e9,
-        velocity_dispersion=200,
-        radius=15,
-        is_dark_matter=True
-    )
-    names.append(name_ghost)
-    gaps.append(gap_ghost)
-    colors.append('black')
+    # BOLT: Add synthetic data to demonstrate batch performance
+    synthetic_count = 100
+    names.extend([f"Synth-{i}" for i in range(synthetic_count)])
+    masses = np.concatenate([masses, np.random.uniform(1e8, 1e13, synthetic_count)])
+    radii = np.concatenate([radii, np.random.uniform(5, 50, synthetic_count)])
+
+    print(f"\n{Colors.HEADER}--- EXECUTING BATCH SIMULATION ({len(names)} Objects) ---{Colors.ENDC}")
+
+    start_time = time.time()
+
+    # PALETTE: Progress Bar Integration
+    # Since vectorization is instant, we simulate a 'scan' effect for UX
+    step_size = max(1, len(names) // 20)
+    for i in range(0, len(names), step_size):
+        print_progress_bar(i, len(names), prefix='Scanning Sector:', suffix='Complete', length=40)
+        time.sleep(0.01) # Artificial delay for visual feedback (Palette)
+
+    # BOLT: The actual heavy lifting (Instantaneous via NumPy)
+    gaps = CosmicSimulator.simulate_batch(names, masses, radii)
+
+    print_progress_bar(len(names), len(names), prefix='Scanning Sector:', suffix='Complete', length=40)
+
+    execution_time = time.time() - start_time
+    print(f"\n{Colors.GREEN}✓ Batch Processing Complete in {execution_time:.4f}s{Colors.ENDC}")
+
+    # PALETTE: Formatted Telemetry Table (Top Results)
+    print(f"\n{Colors.HEADER}{'OBJECT NAME':<20} | {'MASS (Sol)':<12} | {'RADIUS (kpc)':<12} | {'GAP':<10} | {'STATUS'}{Colors.ENDC}")
+    print("-" * 80)
+
+    for i in range(min(5, len(names))): # Show first 5
+        status = f"{Colors.CYAN}FROZEN{Colors.ENDC}" if gaps[i] > CosmicSimulator.ARK_THRESHOLD else f"{Colors.YELLOW}COLLAPSED{Colors.ENDC}"
+        print(f"{names[i]:<20} | {masses[i]:.2e}     | {radii[i]:<12.1f} | {gaps[i]:.5f}    | {status}")
 
     # PALETTE: Generate Visualization
     print(f"\n{Colors.HEADER}--- GENERATING VISUALIZATION ---{Colors.ENDC}")
 
     try:
-        y_pos = np.arange(len(names))
+        # Plot only the main candidates + a few synthetic
+        plot_indices = [0, 1] + list(range(2, 12)) # First 2 + next 10
+        plot_names = [names[i] for i in plot_indices]
+        plot_gaps = [gaps[i] for i in plot_indices]
 
-        plt.figure(figsize=(10, 6))
-        bars = plt.bar(y_pos, gaps, align='center', alpha=0.7, color=colors)
-        plt.xticks(y_pos, names)
+        colors = ['blue' if n == "Milky Way" else 'black' if n == "J0613+52" else 'gray' for n in plot_names]
+
+        y_pos = np.arange(len(plot_names))
+
+        plt.figure(figsize=(12, 6))
+        bars = plt.bar(y_pos, plot_gaps, align='center', alpha=0.7, color=colors)
+        plt.xticks(y_pos, plot_names, rotation=45, ha='right')
         plt.ylabel('Spectral Gap Magnitude')
         plt.title('ARK Verification: Spectral Gap Analysis')
+        plt.tight_layout()
 
         # Add Threshold Line
         plt.axhline(y=CosmicSimulator.ARK_THRESHOLD, color='r', linestyle='--', label=f'Obstruction Limit ({CosmicSimulator.ARK_THRESHOLD})')
-
-        # Add values on top of bars
-        for bar in bars:
-            height = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2., height,
-                    f'{height:.4f}',
-                    ha='center', va='bottom')
 
         plt.legend()
         plt.savefig('ark_verification_plot.png')
