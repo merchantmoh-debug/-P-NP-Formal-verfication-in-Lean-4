@@ -18,14 +18,16 @@ import sys
 
 # PALETTE: Visual Telemetry System
 class Colors:
-    HEADER = '\033[95m'
-    BLUE = '\033[94m'
-    CYAN = '\033[96m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
+    USE_COLORS = sys.stdout.isatty()
+
+    HEADER = '\033[95m' if USE_COLORS else ''
+    BLUE = '\033[94m' if USE_COLORS else ''
+    CYAN = '\033[96m' if USE_COLORS else ''
+    GREEN = '\033[92m' if USE_COLORS else ''
+    YELLOW = '\033[93m' if USE_COLORS else ''
+    RED = '\033[91m' if USE_COLORS else ''
+    ENDC = '\033[0m' if USE_COLORS else ''
+    BOLD = '\033[1m' if USE_COLORS else ''
 
 class CosmicSimulator:
     """
@@ -79,7 +81,7 @@ class CosmicSimulator:
         Processes N galaxies in a single vectorized pass (War Speed Execution).
         """
         # Vectorized Physics Checks
-        escape_vels = cls.calculate_escape_velocity(masses, radii)
+        # BOLT: Removed unused escape_vels calculation to save FLOPs
         gaps = cls.calculate_spectral_gap(masses, radii)
 
         return gaps
@@ -123,12 +125,9 @@ def main():
 
     start_time = time.time()
 
-    # PALETTE: Progress Bar Integration
-    # Since vectorization is instant, we simulate a 'scan' effect for UX
-    step_size = max(1, len(names) // 20)
-    for i in range(0, len(names), step_size):
-        print_progress_bar(i, len(names), prefix='Scanning Sector:', suffix='Complete', length=40)
-        time.sleep(0.01) # Artificial delay for visual feedback (Palette)
+    # BOLT: Removed artificial sleep for War Speed Execution
+    # PALETTE: Progress bar is now just a state indicator since calc is instant
+    print_progress_bar(0, len(names), prefix='Scanning Sector:', suffix='Initializing', length=40)
 
     # BOLT: The actual heavy lifting (Instantaneous via NumPy)
     gaps = CosmicSimulator.simulate_batch(names, masses, radii)
@@ -136,7 +135,7 @@ def main():
     print_progress_bar(len(names), len(names), prefix='Scanning Sector:', suffix='Complete', length=40)
 
     execution_time = time.time() - start_time
-    print(f"\n{Colors.GREEN}✓ Batch Processing Complete in {execution_time:.4f}s{Colors.ENDC}")
+    print(f"\n{Colors.GREEN}✓ Batch Processing Complete in {execution_time:.6f}s{Colors.ENDC}")
 
     # PALETTE: Formatted Telemetry Table (Top Results)
     print(f"\n{Colors.HEADER}{'OBJECT NAME':<20} | {'MASS (Sol)':<12} | {'RADIUS (kpc)':<12} | {'GAP':<10} | {'STATUS'}{Colors.ENDC}")
@@ -145,6 +144,11 @@ def main():
     for i in range(min(5, len(names))): # Show first 5
         status = f"{Colors.CYAN}FROZEN{Colors.ENDC}" if gaps[i] > CosmicSimulator.ARK_THRESHOLD else f"{Colors.YELLOW}COLLAPSED{Colors.ENDC}"
         print(f"{names[i]:<20} | {masses[i]:.2e}     | {radii[i]:<12.1f} | {gaps[i]:.5f}    | {status}")
+
+    # PALETTE: Glossary Section
+    print(f"\n{Colors.BOLD}--- ARK PHYSICS GLOSSARY ---{Colors.ENDC}")
+    print(f"{Colors.CYAN}FROZEN:{Colors.ENDC}    Stable state (Dark Matter/Gas). High Spectral Gap. Cannot collapse.")
+    print(f"{Colors.YELLOW}COLLAPSED:{Colors.ENDC} Unstable state (Stars/Black Holes). Low Spectral Gap. Gravitational collapse active.")
 
     # PALETTE: Generate Visualization
     print(f"\n{Colors.HEADER}--- GENERATING VISUALIZATION ---{Colors.ENDC}")
