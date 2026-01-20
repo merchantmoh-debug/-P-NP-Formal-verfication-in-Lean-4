@@ -1,15 +1,13 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["da030868d017a039.olean"],
-  "i": "edd824e34d54718c.ilean",
+ {"o": ["51b310a9c8835cf4.olean"],
+  "i": "8fbe3a04caf1f22b.ilean",
   "c": "6661e8c8e5a72889.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/app/.lake/packages/Cli/.lake/build/lib/lean:/app/.lake/packages/batteries/.lake/build/lib/lean:/app/.lake/packages/Qq/.lake/build/lib/lean:/app/.lake/packages/aesop/.lake/build/lib/lean:/app/.lake/packages/proofwidgets/.lake/build/lib/lean:/app/.lake/packages/importGraph/.lake/build/lib/lean:/app/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/app/.lake/packages/plausible/.lake/build/lib/lean:/app/.lake/packages/mathlib/.lake/build/lib/lean:/app/.lake/build/lib/lean /home/jules/.elan/toolchains/leanprover--lean4---v4.27.0-rc1/bin/lean /app/src/ARK_Core/Impossibility.lean -o /app/.lake/build/lib/lean/ARK_Core/Impossibility.olean -i /app/.lake/build/lib/lean/ARK_Core/Impossibility.ilean -c /app/.lake/build/ir/ARK_Core/Impossibility.c --setup /app/.lake/build/ir/ARK_Core/Impossibility.setup.json --json",
-   "level": "trace"},
-  {"message": "src/ARK_Core/Impossibility.lean:36:8: declaration uses 'sorry'",
-   "level": "warning"}],
+   "level": "trace"}],
  "inputs":
  [["ARK_Core.Impossibility:deps",
    [["deps",
@@ -41,7 +39,7 @@
       ["module plugins", "00000000000006bb"]]]]],
   ["Lean 4.27.0, commit 2fcce7258eeb6e324366bc25f9058293b04b7547",
    "6f43b597efea5d4c"],
-  ["/app/src/ARK_Core/Impossibility.lean", "36c599734fb25086"],
+  ["/app/src/ARK_Core/Impossibility.lean", "e38d027bac598ab0"],
   ["options", "00000000000006bb"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "e858fc74aabdcfa1"}
+ "depHash": "c1150dc9ec304c0c"}
