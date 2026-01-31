@@ -9,7 +9,7 @@ By establishing an **Identity Isomorphism** between Computational Complexity (3-
 
 The proof allows for no ambiguity. It relies on axioms which are **Proven Physical and Topological Laws**:
 
-1. **Witten-Helffer-Sjostrand Theorem (1984):** In a multi-well potential, the spectral gap $\lambda_1$ decays exponentially. This is a **proven quantum physical fact** and a rigorous mathematical theorem.
+1. **Witten-Helffer-Sjöstrand Theorem (1984):** In a multi-well potential, the spectral gap $\lambda_1$ decays exponentially. This is a **proven quantum physical fact** and a rigorous mathematical theorem.
 2. **Topological Frustration:** 3-SAT instances map to frustrated topologies. This is a **proven topological fact**.
 3. **The Church-Turing-Deutsch Principle:** Efficiency is physical.
 
