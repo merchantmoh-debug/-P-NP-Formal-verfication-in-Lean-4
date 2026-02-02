@@ -6,7 +6,7 @@
   "c": "61e74293ef89cd6d.c"},
  "log":
  [{"message":
-   ".> LEAN_PATH=C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\build\\lib\\lean c:\\Users\\Stran\\.elan\\toolchains\\leanprover--lean4---v4.27.0-rc1\\bin\\lean.exe C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\src\\ARK_Core\\SpectralGap.lean -o C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\build\\lib\\lean\\ARK_Core\\SpectralGap.olean -i C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\build\\lib\\lean\\ARK_Core\\SpectralGap.ilean -c C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\build\\ir\\ARK_Core\\SpectralGap.c --setup C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\.lake\\build\\ir\\ARK_Core\\SpectralGap.setup.json --json",
+   ".> LEAN_PATH=/app/.lake/packages/Cli/.lake/build/lib/lean:/app/.lake/packages/batteries/.lake/build/lib/lean:/app/.lake/packages/Qq/.lake/build/lib/lean:/app/.lake/packages/aesop/.lake/build/lib/lean:/app/.lake/packages/proofwidgets/.lake/build/lib/lean:/app/.lake/packages/importGraph/.lake/build/lib/lean:/app/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/app/.lake/packages/plausible/.lake/build/lib/lean:/app/.lake/packages/mathlib/.lake/build/lib/lean:/app/.lake/build/lib/lean /home/jules/.elan/toolchains/leanprover--lean4---v4.27.0-rc1/bin/lean /app/src/ARK_Core/SpectralGap.lean -o /app/.lake/build/lib/lean/ARK_Core/SpectralGap.olean -i /app/.lake/build/lib/lean/ARK_Core/SpectralGap.ilean -c /app/.lake/build/ir/ARK_Core/SpectralGap.c --setup /app/.lake/build/ir/ARK_Core/SpectralGap.setup.json --json",
    "level": "trace"}],
  "inputs":
  [["ARK_Core.SpectralGap:deps",
@@ -15,10 +15,10 @@
        [["@«ARK-P-neq-NP»:extraDep", "00000000000006bb"]]],
       ["imports",
        [["ARK_Core.WittenOperator transitive imports (legacy)",
-         "25db794e52038dd0"],
+         "9b0cb96577367b5b"],
         ["ARK_Core.WittenOperator:importAllArts", "e302714535b309d2"],
         ["Mathlib.Analysis.InnerProductSpace.Spectrum transitive imports (legacy)",
-         "3e05afe2429b4868"],
+         "381c16df5232e111"],
         ["Mathlib.Analysis.InnerProductSpace.Spectrum:importAllArts",
          "ca0f81263e6cc267"]]]]],
     ["libs",
@@ -28,8 +28,7 @@
       ["module plugins", "00000000000006bb"]]]]],
   ["Lean 4.27.0, commit 2fcce7258eeb6e324366bc25f9058293b04b7547",
    "6f43b597efea5d4c"],
-  ["C:\\Users\\Stran\\.gemini\\antigravity\\scratch\\ARK-P-neq-NP-Formalization\\src\\ARK_Core\\SpectralGap.lean",
-   "b158f01658bf2a2e"],
+  ["/app/src/ARK_Core/SpectralGap.lean", "b158f01658bf2a2e"],
   ["options", "00000000000006bb"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "7cad5d10e9782230"}
+ "depHash": "111f2927a8bc7f00"}
