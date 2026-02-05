@@ -93,7 +93,15 @@ def main():
     parser.add_argument("--maxdim", type=int, default=1, help="Max homology dimension")
     parser.add_argument("--hom", type=int, default=1, help="Homology dimension to test stability on")
     parser.add_argument("--trials", type=int, default=5, help="Number of trials per transform")
+    parser.add_argument("--quick", action="store_true", help="Enable rapid verification mode (Bolt Speed)") # Added
     args = parser.parse_args()
+
+    # BOLT: Quick Mode Logic
+    if args.quick:
+        print("⚡ [BOLT MODE] Rapid verification enabled. Limiting data and trials.")
+        if args.limit is None:
+            args.limit = 500
+        args.trials = 2
 
     # Load Data
     X = load_xyz(args.data, args.limit)
