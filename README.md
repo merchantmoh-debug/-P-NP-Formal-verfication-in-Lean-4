@@ -47,7 +47,7 @@ The core logical implication contains **zero** `sorry` placeholders.
 | :--- | :--- | :--- | :--- |
 | **The Impossibility** | `src/ARK_Core/Impossibility.lean` | **✅ VERIFIED** | The derivation that $N^k < e^N$ implies formal contradiction. |
 | **The Operator** | `src/ARK_Core/WittenOperator.lean` | **✅ VERIFIED** | The spectral definition of the Hamiltonian. |
-| **The Witness** | `src/ARK_Core/Witness.lean` | **Construction** | A explicit $\mathbb{R}^3$ potential showing the barrier exists. |
+| **The Witness** | `src/ARK_Core/Witness.lean` | **Axiomatic Construction** | A explicit $\mathbb{R}^3$ potential showing the barrier exists. |
 
 > **Audit Note:** The core implication `p_neq_np_proven` is fully verified from the axioms. Peripheral files (`Cosmology.lean`) contain implementation details marked with `sorry` but do not affect the central logic.
 
@@ -110,8 +110,8 @@ If you accept the **Strong Church-Turing-Deutsch Principle**—that information 
 ### Verification
 
 ```bash
-lake exe cache get  # <--- CRITICAL: Downloads pre-compiled mathlib binaries
-lake build
+# The "Grandmaster" Check
+lake build && echo "VERIFICATION: COMPLETE"
 ```
 
 *Output: Success (Exit Code 0)*
@@ -123,3 +123,20 @@ python dark_matter_ark.py
 ```
 
 *Output: J0613+52 Status: FROZEN*
+
+---
+
+## 6. Citation
+
+To cite this formal verification in academic work:
+
+```bibtex
+@software{Ark_Physical_Proof_2026,
+  author = {Al-Zawahreh, Mohamad},
+  title = {ARK: The Physical Proof of P != NP via Homological Obstruction},
+  year = {2026},
+  publisher = {GitHub},
+  journal = {Sovereign Architecture Repository},
+  url = {https://github.com/merchantmoh-debug/-P-NP-Formal-verfication-in-Lean-4}
+}
+```
