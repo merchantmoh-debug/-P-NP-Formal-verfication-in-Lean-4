@@ -65,19 +65,26 @@ class CosmicSimulator:
         return np.sqrt(2 * CosmicSimulator.G_APPROX * mass_solar / radius_kpc)
 
     @classmethod
-    def simulate_batch(cls, names: List[str], masses: np.ndarray, radii: np.ndarray, dispersions: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def simulate_batch(cls, names: List[str], baryonic_masses: np.ndarray, dark_masses: np.ndarray, radii: np.ndarray, dispersions: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """
         BOLT OPTIMIZATION: Batch processing for cosmic structures.
         Processes N galaxies in a single vectorized pass (War Speed Execution).
+
+        Now separates Baryonic (Density) from Dark Matter (Gravity).
 
         Returns:
             gaps (np.ndarray): Spectral Gap values.
             escape_vels (np.ndarray): Escape velocities (km/s).
             is_unstable (np.ndarray): Boolean array (True if v_disp > v_esc).
         """
+        total_masses = baryonic_masses + dark_masses
+
         # Vectorized Physics Checks
-        gaps = cls.calculate_spectral_gap(masses, radii)
-        escape_vels = cls.calculate_escape_velocity(masses, radii)
+        # Gap depends on Baryonic Density (Star Formation potential)
+        gaps = cls.calculate_spectral_gap(baryonic_masses, radii)
+
+        # Stability depends on Total Gravity (Dark Matter Halo)
+        escape_vels = cls.calculate_escape_velocity(total_masses, radii)
 
         # ARK TRUTH CHECK: Newtonian Instability
         is_unstable = dispersions > escape_vels
@@ -105,12 +112,14 @@ def main():
     print(f"Threshold: {CosmicSimulator.ARK_THRESHOLD}")
 
     # Simulation Data Setup
-    # 1: Milky Way (Standard Spiral) - v_disp ~ 200 km/s (halo/bulge)
-    # 2: J0613+52 (Dark Matter Galaxy) - Low surface brightness, v_disp unknown but likely low/stable?
-    #    Let's assume it's stable (v_disp < v_esc) for the "Frozen" hypothesis.
+    # 1: Milky Way (Standard Spiral)
+    #    Baryonic: ~1e11 (Stars+Gas), Dark: ~1e12 (Halo)
+    # 2: J0613+52 (Dark Matter Galaxy)
+    #    Baryonic: ~2e9 (Gas only), Dark: ~1e11 (Stabilizing Halo)
 
     names = ["Milky Way", "J0613+52"]
-    masses = np.array([1e12, 2.0e9])
+    baryonic_masses = np.array([1.0e11, 2.0e9])
+    dark_masses = np.array([1.0e12, 1.0e11])
     radii = np.array([30.0, 15.0])
     dispersions = np.array([150.0, 40.0]) # km/s
 
@@ -119,16 +128,20 @@ def main():
     names.extend([f"Synth-{i}" for i in range(synthetic_count)])
 
     # Generate random synthetic data
-    # Random masses between 1e8 and 1e13
-    synth_masses = np.random.uniform(1e8, 1e13, synthetic_count)
-    masses = np.concatenate([masses, synth_masses])
+    # Baryonic: 1e8 to 1e11
+    synth_baryonic = np.random.uniform(1e8, 1e11, synthetic_count)
+    # Dark: 10x to 100x Baryonic (Dark Matter Dominance)
+    synth_dark = synth_baryonic * np.random.uniform(10, 100, synthetic_count)
+
+    baryonic_masses = np.concatenate([baryonic_masses, synth_baryonic])
+    dark_masses = np.concatenate([dark_masses, synth_dark])
 
     # Random radii between 5 and 50 kpc
     synth_radii = np.random.uniform(5, 50, synthetic_count)
     radii = np.concatenate([radii, synth_radii])
 
-    # Random dispersions between 10 and 500 km/s
-    synth_dispersions = np.random.uniform(10, 500, synthetic_count)
+    # Random dispersions between 10 and 300 km/s
+    synth_dispersions = np.random.uniform(10, 300, synthetic_count)
     dispersions = np.concatenate([dispersions, synth_dispersions])
 
     print(f"\n{Colors.HEADER}--- EXECUTING BATCH SIMULATION ({len(names)} Objects) ---{Colors.ENDC}")
@@ -139,7 +152,7 @@ def main():
     print_progress_bar(0, len(names), prefix='Scanning Sector:', suffix='Initializing', length=40)
 
     # BOLT: The actual heavy lifting (Instantaneous via NumPy)
-    gaps, v_escs, unstable_flags = CosmicSimulator.simulate_batch(names, masses, radii, dispersions)
+    gaps, v_escs, unstable_flags = CosmicSimulator.simulate_batch(names, baryonic_masses, dark_masses, radii, dispersions)
 
     print_progress_bar(len(names), len(names), prefix='Scanning Sector:', suffix='Complete', length=40)
 
@@ -147,8 +160,8 @@ def main():
     print(f"\n{Colors.GREEN}✓ Batch Processing Complete in {execution_time:.6f}s{Colors.ENDC}")
 
     # PALETTE: Formatted Telemetry Table (Top Results)
-    print(f"\n{Colors.HEADER}{'OBJECT NAME':<20} | {'MASS (Sol)':<10} | {'GAP':<8} | {'V_disp':<8} | {'V_esc':<8} | {'STATUS'}{Colors.ENDC}")
-    print("-" * 95)
+    print(f"\n{Colors.HEADER}{'OBJECT NAME':<20} | {'BARYONIC':<10} | {'DARK MASS':<10} | {'GAP':<8} | {'V_esc':<8} | {'STATUS'}{Colors.ENDC}")
+    print("-" * 105)
 
     for i in range(min(10, len(names))): # Show first 10
         # Determine Status
@@ -159,7 +172,7 @@ def main():
         else:
             status = f"{Colors.YELLOW}COLLAPSED{Colors.ENDC}"
 
-        print(f"{names[i]:<20} | {masses[i]:.2e}   | {gaps[i]:.4f}   | {dispersions[i]:<8.1f} | {v_escs[i]:<8.1f} | {status}")
+        print(f"{names[i]:<20} | {baryonic_masses[i]:.2e}   | {dark_masses[i]:.2e}   | {gaps[i]:.4f}   | {v_escs[i]:<8.1f} | {status}")
 
     # PALETTE: Glossary Section
     print(f"\n{Colors.BOLD}--- ARK PHYSICS GLOSSARY ---{Colors.ENDC}")
